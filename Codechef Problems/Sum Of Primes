@@ -1,0 +1,39 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+bool prime(int m)
+{  if(m<=1)
+      {
+return false;
+    
+          }
+    for (int j = 2; j<m; j++)
+            if (m%j== 0)
+            return false;
+  return true;          
+}
+
+int main() 
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,sum=0;
+        cin>>n;
+        for(int i=1;i<=n;i++)
+        {
+            if(prime(i)&&prime(2*i+1))
+            {
+             sum+=i;
+            }
+            
+        }
+        cout<<sum<<endl;
+    }
+    return 0;
+}
+© 2022 GitHub, Inc.
