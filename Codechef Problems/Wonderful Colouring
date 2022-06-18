@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int T;
+   cin>>T;
+   while(T--)
+   {
+       string s;
+       cin>>s;
+       int l=s.length();
+       int a[26]={0};
+       for(int i=0;i<l;i++)
+       {
+           int x=s[i]-'0';
+           a[x-49]++;
+    }
+       int d=0,c=0;
+       for(int i=0;i<26;i++)
+       {
+           if(a[i]==1)
+           {
+               c++;
+           }
+           else if(a[i]>=2)
+           {
+               d++;
+           }
+       }
+       cout<<d+c/2<<"\n";
+   }
+    return 0;
+}
