@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int Knapsack(vector <int> &wt,vector <int>&val,int w,int n)
+{
+    if(w==0||n==0)
+    {
+        return 0;
+    }
+    if(wt[n-1]<=w)
+    {
+        return max(val[n-1]+Knapsack(wt,val,w-wt[n-1],n-1),Knapsack(wt,val,w,n-1));
+    }
+    else
+    return Knapsack(wt,val,w,n-1);
+}
+int main()
+{  vector <int> wt,val;
+   int w,n,ele=0,profit=0;
+   cin>>w>>n;
+   int t[n+1][w+1];
+   memset(t,-1,sizeof(t));
+   for(int i=0;i<n;i++)
+   {
+       cin>>ele;
+       wt.push_back(ele);
+   }
+   for(int i=0;i<n;i++)
+   {
+       cin>>ele;
+      val.push_back(ele);
+   }
+   profit=Knapsack(wt,val,w, n);
+   cout<<profit;
+  
+   
+    return 0;
+}
