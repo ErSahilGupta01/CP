@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+    
+    //coefficient of x^2 =a;coefficient of x=b,constant c;
+    float a,b,c,D;
+    scanf("%f %f %f",&a,&b,&c);
+    D=((b*b)-4*a*c);
+    if(D==0)
+     {   float d;
+        d=(-b/(2*a));
+        printf("%f\n %f",d,d);
+    } 
+    else if(D>0){
+        float d,e;
+        d=((-b+sqrt(D))/(2*a));
+        e=((-b-sqrt(D))/(2*a));
+        printf("%f\n %f",d,e);
+    }
+    else{
+        float d,e;
+       
+        d=(-b/(2*a));
+        e=(sqrt(-D)/(2*a));
+        printf("%f +i%.1f\n",d,e);
+        printf("%f -i%.1f",d,e);
+        
+    }
+    return 0;
+}
