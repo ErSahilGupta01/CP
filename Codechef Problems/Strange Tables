@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main(){
+    int t;cin>>t;
+    while(t--){
+ll n,m,x;
+cin>>n>>m>>x;
+ll y,z;
+y=(x-1)%n;z=(x-1)/n;
+ cout<<((y*m) + z+1)<<"\n";
+ 
+    }
+    return 0;
+}
