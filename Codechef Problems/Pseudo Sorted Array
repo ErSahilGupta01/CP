@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{ 
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll t;
+    cin>>t;
+    while(t--)
+{
+    ll x,ele,temp=0,c=0;
+    cin>>x;
+    vector<ll> v,v1;
+    for(ll i=0;i<x;i++)
+    {
+        cin>>ele;
+        v.push_back(ele);
+        v1.push_back(ele);
+    }
+    for(ll i=0;i<x-1;i++)
+    {
+        if(v[i]>v[i+1])
+        {
+            temp=v[i];
+            v[i]=v[i+1];
+            v[i+1]=temp;
+            break;
+        }
+    }
+    sort(v1.begin(),v1.end());
+    for(ll i=0;i<x;i++)
+    {
+        if(v[i]!=v1[i])
+        {
+            c++;
+        }
+    }
+    if(c==0)
+    {
+        cout<<"YES"<<endl;
+        
+    }
+    else
+    cout<<"NO"<<endl;
+    
+   
+   
+}
+    return 0;
+}
