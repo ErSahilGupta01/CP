@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{ ll t;
+cin>>t;
+while(t--)
+{
+    ll x,y,a,b;
+    cin>>x>>y;
+    a=x*10;
+    b=y*5;
+    if(a>b)
+    {
+        cout<<"FIRST"<<endl;
+    }
+    else if(a==b)
+    {
+        cout<<"ANY"<<endl;
+    }
+    else
+     cout<<"SECOND"<<endl;
+   
+   
+}
+    return 0;
+}
