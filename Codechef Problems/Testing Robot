@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,x,c=0;
+        cin>>n>>x;
+        string s;
+        ll a[n+1];
+        a[0]=x;
+        cin>>s;
+        for(ll i=0,j=i+1;i<n;i++,j++)
+        {  
+           if(s[i]=='R')
+           {
+               a[j]=x+1;
+               x=x+1;
+           }
+           else 
+           {
+               a[j]=x-1;
+               x=x-1;
+           }
+        }
+      
+        sort(a,a+(n+1));
+        for(ll i=0;i<n;i++)
+        {
+            if(a[i]!=a[i+1])
+            {
+                c++;
+            }
+        }
+        cout<<c+1<<endl;
+    }
+
+    return 0;
+}
