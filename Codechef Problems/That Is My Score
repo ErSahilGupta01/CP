@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define  ll long long 
+bool cmp(pair<int, int> x, pair<int, int> y)
+{
+    if (x.first != y.first)
+        return x.first < y.first; //return the one with smaller first element
+    else
+        return x.second < y.second; //if first element is equal then return the one with smaller second element
+}
+
+int main()
+{ 
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll t;
+    cin>>t;
+    while(t--)
+{
+    ll n,sum=0,e,e1;
+    cin>>n;
+    vector<pair<int, int>> v;
+    for(ll i=0;i<n;i++)
+    {
+        cin>>e;
+        cin>>e1;
+         v.push_back(make_pair(e,e1));
+    }
+      sort(v.begin(), v.end(), cmp);
+     for(ll i=0;i<n;i++)
+     {
+         if((v[i].first>=1&&v[i].first<=8)&&(v[i].first!=v[i+1].first))
+         {  
+             
+             sum+=v[i].second;
+         }
+         
+     }
+     cout<<sum<<endl;
+}  
+    return 0;
+}
