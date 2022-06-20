@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{  
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);    
+  ll t;cin>>t;
+  while(t--)
+  {
+      ll ar[26],f[26]={0},c=0;
+      for(ll i=0;i<26;i++)
+      {
+          cin>>ar[i];
+      }
+      string s;
+      cin>>s;
+     for(ll i=0;i<s.size();i++)
+     {
+         f[s[i]-'a']+=1;
+     }
+     for(ll i=0;i<26;i++)
+     {
+        if(!f[i])
+        {
+            c+=ar[i];
+        }
+      }   cout<<c<<endl;
+  }
+    return 0;
+}
