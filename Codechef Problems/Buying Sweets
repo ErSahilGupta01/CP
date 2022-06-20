@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+   ll t;
+   cin>>t;
+   while(t--)
+   {
+       ll n,r,ele,ans=0;
+       cin>>n>>r;
+       vector <ll> x(n),y(n);
+       vector <pair<ll,ll>> z;
+       for(ll i=0;i<n;i++)
+       {
+           cin>>x[i];
+       }
+        for(ll i=0;i<n;i++)
+       {
+           cin>>y[i];
+       }
+       for(ll i=0;i<n;i++)
+       {
+           ele=x[i]-y[i];
+           z.push_back({ele,x[i]});
+       }
+       sort(z.begin(),z.end());
+       for(auto cur:z )
+       {
+           ll effective_cost=cur.first,original_cost=cur.second;
+           ll cashback=original_cost-effective_cost;
+          
+           if(r<original_cost) continue;
+          
+           r-=original_cost;
+           ans+=1;
+           ans+=(r/effective_cost);
+           r%=effective_cost;
+           r+=cashback;
+          
+       }
+   
+   cout<<ans<<endl;
+}
+    return 0;
+}
