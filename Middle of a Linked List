@@ -1,0 +1,56 @@
+class Node:
+    '''A Node class'''
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+def create_node(data):
+    '''Creates a node'''
+    return Node(data)
+
+
+def input_list():
+    '''Inputs the list'''
+    head = None
+    values_list = list(map(int, input().split()))
+    for value in values_list:
+        if head is None:
+            head = create_node(value)
+        else:
+            temp = head
+            while temp.next is not None:
+                temp = temp.next
+            temp.next = create_node(value)
+    return head
+
+
+def print_list(head):
+    '''Prints the list'''
+    while head:
+        print(head.data, end=' ')
+        head = head.next
+    print()
+
+
+def middle_element(head):
+    t=head
+    r=head
+    while(t.next!=None):
+        t=t.next.next
+        r=r.next
+    print(r.data)    
+    
+
+
+def main():
+    '''Main function'''
+    head = input_list()
+    middle_element(head)
+    # print_list(head)
+    # Uncomment the next line
+    # print(middle_element(head))
+
+
+if __name__ == '__main__':
+    main()
