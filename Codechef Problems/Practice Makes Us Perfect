@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main()
+{
+    ll a[4],c=0;
+    for(ll i=0;i<4;i++)
+    {
+        cin>>a[i];
+        if(a[i]>=10)
+        {
+            c++;
+        }
+    }
+    cout<<c;
+
+    return 0;
+}
