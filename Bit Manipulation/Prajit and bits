@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,c=0;
+        cin>>n;
+        ll num=n;
+        while(num) 
+        {  
+            if((num&1)==0)
+           {
+               c++;
+           }
+           num=num>>1;
+        }
+       cout<<c<<endl; 
+    }
+
+    return 0;
+}
